@@ -1,7 +1,7 @@
 import { NavLink , Link } from 'react-router-dom';
 import logo from '../../../assets/image/logo.png'
 import '../Navbar/navbar.css'
-
+import { LuLayoutDashboard } from "react-icons/lu";
 import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { IoIosLogOut } from "react-icons/io";
@@ -103,9 +103,11 @@ LOGOUT
          <p className='ml-5 mt-6 text-white font-bold flex items-center gap-2 '><MdOutlineDriveFileRenameOutline />{user?.displayName}</p>
         <p className='ml-5 mt-2 text-white font-bold flex items-center gap-2 '><HiOutlineMailOpen />{user?.email}</p>
         <p className='ml-5 mt-2 text-white font-bold flex items-center gap-2 ' ><TbArrowGuide />{user?.uid}</p>
+        <li className='ml-2 flex text-white font-bold'><NavLink to={"/dashboard"}> <LuLayoutDashboard /> Dashboard</NavLink></li>
         </> : <></>
        }
         <li className='ml-2 text-white font-bold'><NavLink><MdOutlineSettings />Settings</NavLink></li>
+
         {
   user ? <>
   <li onClick={handleLogout} className='ml-2 text-white font-bold'><NavLink> <IoIosLogOut />Logout</NavLink></li>

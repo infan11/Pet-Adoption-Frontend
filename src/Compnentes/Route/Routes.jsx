@@ -7,6 +7,7 @@ import Register from "../Verify/Register/Register";
 import PetList from "../PetList/PetList/PetList";
 import ForgetPass from "../Verify/ForgetPass/ForgetPass";
 import { createBrowserRouter } from "react-router-dom";
+import Dashboard from "../Dashboard/Dashboard/Dashboard";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -38,4 +39,8 @@ export const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: "/dashboard",
+    element : <Dashboard></Dashboard>
+  }
 ]);
