@@ -6,7 +6,7 @@ const PrivateRoute = ({children}) => {
    const {user, loading} = useAuth();
    const location = useLocation();
    if(loading){
-    return <div className="min-h-screen justify-center items-center">
+    return <div className="min-h-screen justify-center  items-center text-center">
         <Puff
   visible={true}
   height="100"
@@ -19,7 +19,7 @@ const PrivateRoute = ({children}) => {
     </div>
    }
    if(!user){
-    return <Navigate to={"login"} state={location?.pathname || "/"}></Navigate>
+    return <Navigate to={"/login"} state={location?.pathname || "/"}></Navigate>
    }
    return  (
     <div>

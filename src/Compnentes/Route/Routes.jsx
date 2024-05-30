@@ -8,6 +8,7 @@ import PetList from "../PetList/PetList/PetList";
 import ForgetPass from "../Verify/ForgetPass/ForgetPass";
 import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../Dashboard/Dashboard/Dashboard";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -23,7 +24,7 @@ export const router = createBrowserRouter([
        },
       {
         path: "/donation",
-        element: <Donation></Donation>
+        element: <PrivateRoute><Donation></Donation></PrivateRoute>
       },
       {
        path: "/login",
