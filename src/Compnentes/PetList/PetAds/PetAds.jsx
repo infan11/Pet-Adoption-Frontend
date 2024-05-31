@@ -11,7 +11,7 @@ const PetAds = () => {
   <figure><img src={imageA} alt="Shoes" /></figure>
   <div className="card-body ">
     
-    <p className='text-2xl font-bold  '>Let’s Find Your <br /> New Best Friend</p>
+    <p className='text-2xl font-bold text-white  '>Let’s Find Your <br /> New Best Friend</p>
     <div className=" ">
     <Link to={"/register"}>  <button className="btn w-full px-9 bg-[#ff3939] font-bold  text-white border-x-8 rounded-full">Create An Account</button></Link>
     </div>
@@ -21,7 +21,7 @@ const PetAds = () => {
   <figure><img src={imageB} alt="Shoes" /></figure>
   <div className="card-body ">
     
-    <p className='text-2xl font-bold  '>Let’s Find Your <br /> New Best Friend</p>
+    <p className='text-2xl font-bold  text-white '>Let’s Find Your <br /> New Best Friend</p>
     <div className=" ">
    <Link to={"/register"}>   <button className="btn w-full px-9 bg-[#000000] font-bold  text-white border-x-8 rounded-full">Create An Account</button></Link>
     </div>

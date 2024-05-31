@@ -47,10 +47,11 @@ Texas
 </button>
 
   </div>
-  <div className='grid md:grid-cols-4 justify-center items-center gap-1 md:block hidden '>
-  <button className='btn w-80 bg-white text-black p-3 rounded-full font-bold flex justify-between items-center gap-2 hover:bg-teal-600 hover:text-white text-[16px]  '><span className='flex gap-2'><IoLocationOutline />
+  <div className='md:block hidden'>
+  <div className='grid md:grid-cols-4 justify-center items-center gap-1   mt-2'>
+  <button className='btn w-80 bg-white text-black p-3 rounded-full font-bold flex justify-between items-center gap-2 hover:bg-teal-600 hover:text-white text-[16px]   '><span className='flex gap-2'><IoLocationOutline />
 
-  Florida</span><span className=''><FaArrowRight></FaArrowRight></span>
+Florida</span><span className=''><FaArrowRight></FaArrowRight></span>
 </button>
 <button className='btn w-80 bg-white text-black p-3 rounded-full font-bold flex justify-between items-center gap-2 hover:bg-teal-600 hover:text-white text-[16px]  '><span className='flex gap-2'><IoLocationOutline />
 
@@ -62,11 +63,12 @@ Virginia</span><span className=''><FaArrowRight></FaArrowRight></span>
 Kansas
 </span><span className=''><FaArrowRight></FaArrowRight></span>
 </button>
-  <button className='btn w-80 bg-white text-black p-3 rounded-full font-bold flex justify-between items-center gap-2 hover:bg-teal-600 hover:text-white text-[16px]  '><span className='flex gap-2'><IoLocationOutline />
+<button className='btn w-80 bg-white text-black p-3 rounded-full font-bold flex justify-between items-center gap-2 hover:bg-teal-600 hover:text-white text-[16px]  '><span className='flex gap-2'><IoLocationOutline />
 
 Los Angeles</span><span className=''><FaArrowRight></FaArrowRight></span>
 </button>
 
+  </div>
   </div>
   </div>
 </div>
