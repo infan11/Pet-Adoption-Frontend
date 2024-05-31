@@ -15,10 +15,10 @@ const DonaitionCBanner = () => {
           dynamicBullets: true,
         }}
         modules={[Pagination]}
-        className="mySwiper "
+        className="mySwiper"
       >
         <SwiperSlide>
-       <div className='h-24'>
+       <div className=''>
        <div className="hero  lg:h-[600px]" style={{backgroundImage: 'url(https://i.ibb.co/x1P7kyK/imageC.jpg)'}}>
   <div className="hero-overlay bg-opacity-50"></div>
   <div className="hero-content  mb-56 text-white">

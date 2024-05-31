@@ -3,6 +3,7 @@ import PetBanner from "../PetBanner/PetBanner";
 import PetBannerTwo from "../PetBannerTwo/PetBannerTwo";
 import PetCard from "../PetCard/PetCard";
 import PetCardBanner from "../PetCardBanner/PetCardBanner";
+import PetLocations from "../PetLocations/PetLocations";
 
 
 
@@ -14,6 +15,7 @@ const PetList = () => {
       <PetCardBanner></PetCardBanner>
       <PetCard></PetCard>
       <PetAds></PetAds>
+      <PetLocations></PetLocations>
         </div>
     );
 };

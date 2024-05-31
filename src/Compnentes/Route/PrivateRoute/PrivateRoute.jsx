@@ -6,7 +6,7 @@ const PrivateRoute = ({children}) => {
    const {user, loading} = useAuth();
    const location = useLocation();
    if(loading){
-    return <div className="min-h-screen justify-center  items-center text-center">
+    return <div className="min-h-screen justify-center  items-center ">
         <Puff
   visible={true}
   height="100"

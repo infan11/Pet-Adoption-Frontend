@@ -10,9 +10,11 @@ import AuthProvider from './Provider/AuthProvider/AuthProvider';
 import { Toaster } from 'react-hot-toast';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <AuthProvider>
+ <div className='fromDivNavM'>
+ <AuthProvider>
     <Toaster></Toaster>
    <RouterProvider router={router} />
    </AuthProvider>
+ </div>
   </React.StrictMode>,
 )

@@ -63,7 +63,7 @@
   
   }
   .fromDivNavM:hover {
-      box-shadow: 0 0 20px rgba(2, 82, 255, 0.841); /* বক্সে গ্লো এফেক্ট */
+      box-shadow: inset 0 0 20px rgba(2, 82, 255, 0.894); /* বক্সে গ্লো এফেক্ট */
     }
   
   .fromDivNavM:focus {
