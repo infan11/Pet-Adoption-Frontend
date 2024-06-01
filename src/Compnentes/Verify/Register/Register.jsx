@@ -4,10 +4,13 @@ import toast from "react-hot-toast";
 import useAuth from "../../Hooks/Auth/useAuth";
 import { ImageHook } from "../../Hooks/ImageHook/ImageHook";
 import { Link, useNavigate } from "react-router-dom";
+import UseAxiosSecure from "../../Hooks/AxiosSecure/UseAxiosSecure";
+import AxiosPublic from "../../Hooks/AxiosPublic/AxiosPublic";
 const Register = () => {
   const {createUser,googleUser,githubUser,updateProfiles} = useAuth();
   const navigate = useNavigate();
-
+  const axiosSecure = UseAxiosSecure();
+  const axiosPublic  = AxiosPublic()
   const from = location.state?.from?.pathname || "/"; 
 const handleFromSubmit = async event  => {
   event.preventDefault();
@@ -26,11 +29,23 @@ const handleFromSubmit = async event  => {
   .then(result => {
     const registerUser = result.user;
     console.log(registerUser); 
+
    updateProfiles(name, imageData?.data?.display_url)
    .then(() => {
-    toast.success('Successfully SignUp')
-    form.reset()
-
+    const userInfo = {
+      name: name, 
+      email : email,
+      photo : imageData?.data?.display_url
+  
+    }
+ axiosSecure.post("/users" , userInfo)
+ .then(res => {
+  if(res.data.insertedId){
+    console.log("Send To Database");
+  }
+  toast.success('Successfully SignUp')
+  form.reset()
+ })
    } )
    navigate(from , {replace : true})
   })
@@ -51,7 +66,16 @@ const handleGoogle = () => {
   .then(result => {
     const googleAuth = result.user;
     console.log(googleAuth);
-    toast.success('Successfully Google SignUp')
+    const userInfo = {
+       email : result.user?.email ,
+       name: result.user?.displayName,
+       photo: result.user?.photoURL
+    }
+    axiosPublic.post("/users", userInfo )
+    .then(res => {
+      toast.success('Successfully Google SignUp')
+    })
+    console.log(googleAuth , "Send To Database");
     navigate(from , {replace : true})
   })
   .catch(error => {
@@ -73,6 +97,17 @@ const handleGithub = () => {
   .then(result => {
     const githubAuth = result.user;
     console.log(githubAuth);
+    const userInfo = {
+      email : result.user?.email ,
+      name: result.user?.displayName,
+      photo: result.user?.photoURL
+    }
+    axiosPublic.post("/users" , userInfo)
+    .then(res => {
+      if(res.data.insertedId){
+        console.log("Send To Database");
+      }
+    })
     toast.success('Successfully Github SignUp')
     navigate(from , {replace : true})
   })

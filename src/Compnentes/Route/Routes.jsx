@@ -9,6 +9,11 @@ import ForgetPass from "../Verify/ForgetPass/ForgetPass";
 import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../Dashboard/Dashboard/Dashboard";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import AdminHome from "../Dashboard/AdminHome/AdminHome";
+import AddItems from "../Dashboard/AddItems/AddItems";
+import MenageItems from "../Dashboard/MenageItems/MenageItems";
+import ContactInfo from "../Dashboard/ContactInfo/ContactInfo";
+import AllUser from "../Dashboard/AllUser/AllUser";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -42,6 +47,32 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element : <Dashboard></Dashboard>
+    element : <Dashboard></Dashboard>,
+    children: [
+      {
+        path : "/dashboard/adminHome",
+        element : <AdminHome></AdminHome>
+      },
+      {
+        path : "/dashboard/addItems",
+        element : <AddItems></AddItems>
+      },
+      {
+        path : "/dashboard/manageItems",
+        element : <MenageItems></MenageItems>
+      },
+      {
+        path : "/dashboard/contactInfo",
+        element : <ContactInfo></ContactInfo>
+      },
+      {
+        path : "/dashboard/bookings",
+        element : <AddItems></AddItems>
+      },
+      {
+        path : "/dashboard/users",
+        element : <AllUser></AllUser>
+      },
+    ]
   }
 ]);
