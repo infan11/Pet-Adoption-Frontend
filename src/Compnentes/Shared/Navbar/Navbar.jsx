@@ -11,6 +11,7 @@ import { MdOutlineHome } from "react-icons/md";
 import { CiCircleList } from "react-icons/ci";
 import { SiGooglecampaignmanager360 } from "react-icons/si";
 import useAuth from '../../Hooks/Auth/useAuth';
+import { MdPets } from "react-icons/md";
 const Navbar = () => {
 const {user , logout} = useAuth()
 
@@ -37,6 +38,15 @@ const handleLogout = () => {
   }
 >
 <CiCircleList />PET LISTING
+</NavLink>
+<NavLink
+  to="/seeAllPet"
+  className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "border-b-4  flex gap-2 items-center border-yellow-200  text-white font-bold rounded " : "flex gap-2 items-center font-bold text-white  transform hover:scale-y-110 "
+  }
+>
+<SiGooglecampaignmanager360 />
+ALL PETS
 </NavLink>
 <NavLink
   to="/donation"
@@ -84,10 +94,18 @@ LOGOUT
      {navNavLinks}
     </ul>
   </div>
-  
+  {/* navbar end */}
   <div className="navbar-end">
   {
     user ? <>
+      <NavLink to={"/dashboard/adoptCart"}
+ 
+ className={({ isActive, isPending }) =>
+   isPending ? "pending" : isActive ? "text-2xl  hover:border-b-4  border-yellow-200  font-bold  rounded mt-1" : "text-white  font-bold  text-2xl  " 
+ }
+>
+<MdPets />
+</NavLink>
        <div className="dropdown dropdown-end dropdown-hover ml-5" >
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-16 rounded-full">
@@ -100,6 +118,7 @@ LOGOUT
         </div>
        {
         user ? <>
+
          <p className='ml-5 mt-6 text-white font-bold flex items-center gap-2 '><MdOutlineDriveFileRenameOutline />{user?.displayName}</p>
         <p className='ml-5 mt-2 text-white font-bold flex items-center gap-2 '><HiOutlineMailOpen />{user?.email}</p>
         <p className='ml-5 mt-2 text-white font-bold flex items-center gap-2 ' ><TbArrowGuide />{user?.uid}</p>

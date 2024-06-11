@@ -6,12 +6,14 @@ import { ImageHook } from "../../Hooks/ImageHook/ImageHook";
 import { Link, useNavigate } from "react-router-dom";
 import UseAxiosSecure from "../../Hooks/AxiosSecure/UseAxiosSecure";
 import AxiosPublic from "../../Hooks/AxiosPublic/AxiosPublic";
+import axios from "axios";
 const Register = () => {
-  const {createUser,googleUser,githubUser,updateProfiles} = useAuth();
+  const {createUser,googleUser,githubUser,updateProfiles } = useAuth();
   const navigate = useNavigate();
   const axiosSecure = UseAxiosSecure();
   const axiosPublic  = AxiosPublic()
-  const from = location.state?.from?.pathname || "/"; 
+  const {user} = useAuth();
+  const from = location.state?.from?.pathname || "/" || "/details"; 
 const handleFromSubmit = async event  => {
   event.preventDefault();
   const form = event.target;
@@ -33,9 +35,10 @@ const handleFromSubmit = async event  => {
    updateProfiles(name, imageData?.data?.display_url)
    .then(() => {
     const userInfo = {
-      name: name, 
+     
+      name : name,
       email : email,
-      photo : imageData?.data?.display_url
+      photo: imageData?.data?.display_url
   
     }
  axiosSecure.post("/users" , userInfo)

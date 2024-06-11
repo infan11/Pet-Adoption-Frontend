@@ -1,5 +1,6 @@
 
 import { FaChevronRight } from "react-icons/fa"
+import { Link } from "react-router-dom";
 const PetCardBanner = () => {
     return (
         <div className="px-7 max-w-7xl mx-auto  ">
@@ -10,7 +11,7 @@ const PetCardBanner = () => {
             </div>
         
          <div>
-            <button className="bg-[#88bf88] flex items-center text-white font-bold p-2 px-10 w-full mt-4 rounded-full btn">See All Pet <span className="text-white"><FaChevronRight /></span> </button>
+            <button className="fromDivNavM flex items-center text-white font-bold p-2 px-10 w-full mt-4 rounded-full btn "><Link to={"/seeAllPet"}>View All Pet</Link></button>
          </div>
          </div>
         </div>

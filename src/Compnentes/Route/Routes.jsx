@@ -10,10 +10,14 @@ import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../Dashboard/Dashboard/Dashboard";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import AdminHome from "../Dashboard/AdminHome/AdminHome";
-import AddItems from "../Dashboard/AddItems/AddItems";
 import MenageItems from "../Dashboard/MenageItems/MenageItems";
 import ContactInfo from "../Dashboard/ContactInfo/ContactInfo";
 import AllUser from "../Dashboard/AllUser/AllUser";
+import AddPet from "../Dashboard/AddIPet/AddIPet";
+import SeeAllPet from "../PetList/SeeAllPet/SeeAllPet";
+import Details from "../PetList/Details/Details";
+import AdoptCart from "../AdoptCart/AdoptCart";
+import AddDonationPet from "../Dashboard/AddDonationPet/AddDonationPet";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -25,11 +29,20 @@ export const router = createBrowserRouter([
       },
        {
         path: "/petList",
-        element: <PetList></PetList>
+        element: <PetList></PetList>,
+        
+       },
+       {
+        path : "/seeAllPet",
+        element: <SeeAllPet></SeeAllPet>
        },
       {
         path: "/donation",
         element: <PrivateRoute><Donation></Donation></PrivateRoute>
+      },
+      {
+         path: "/details/:id",
+         element: <Details></Details>
       },
       {
        path: "/login",
@@ -54,9 +67,18 @@ export const router = createBrowserRouter([
         element : <AdminHome></AdminHome>
       },
       {
-        path : "/dashboard/addItems",
-        element : <AddItems></AddItems>
+        path : "/dashboard/addPet",
+        element : <AddPet></AddPet>
       },
+      {
+        path : "/dashboard/addDonationPet",
+        element : <AddDonationPet></AddDonationPet>
+      },
+      {
+        path : "/dashboard/adoptCart",
+        element: <AdoptCart></AdoptCart>
+      }
+      ,
       {
         path : "/dashboard/manageItems",
         element : <MenageItems></MenageItems>
@@ -67,7 +89,7 @@ export const router = createBrowserRouter([
       },
       {
         path : "/dashboard/bookings",
-        element : <AddItems></AddItems>
+        element : <MenageItems></MenageItems>
       },
       {
         path : "/dashboard/users",

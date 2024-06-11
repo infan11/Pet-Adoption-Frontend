@@ -1,5 +1,6 @@
 import DonaitionCBanner from "../DonaitionCBanner/DonaitionCBanner";
 import DonationBannerTwo from "../DonationBannerTwo/DonationBannerTwo";
+import Featurd from "../Fetured/Featurd";
 
 
 const Donation = () => {
@@ -8,6 +9,7 @@ const Donation = () => {
         <div className="fromDivNavM">
         <DonaitionCBanner></DonaitionCBanner>
            <DonationBannerTwo></DonationBannerTwo>
+           <Featurd></Featurd>
         </div>
         </div>
     );

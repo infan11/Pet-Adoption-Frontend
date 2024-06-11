@@ -1,10 +1,104 @@
-
-
+import { useQuery } from "@tanstack/react-query";
+import UseAxiosSecure from "../../Hooks/AxiosSecure/UseAxiosSecure";
+import useAuth from "../../Hooks/Auth/useAuth";
+import { TiUserDeleteOutline } from "react-icons/ti";
+import { RiAdminLine, RiDeleteBin4Line } from "react-icons/ri"
+import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 const AllUser = () => {
-  
+    const {user} = useAuth();
+  const axiosSecure = UseAxiosSecure();
+  const {data  : users = [] , refetch} = useQuery({
+    queryKey : ['users'],
+    queryFn : async () => {
+        const res = await axiosSecure.get("/users");
+        return res.data;
+    }
+  })
+const handleDeleted = id => {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+     axiosSecure.delete(`/users/${id}`)
+     .then(res => {
+      console.log(res.data, "Deleted Data");
+      if(res.data.deletedCount > 0){
+        toast.success("Successfully user deleted ")
+        refetch();
+      }
+     })
+    }
+  });
+}
     return (
         <div className="">
-           
+           <div className=" max-w-7xl px-32  mx-auto  grid md:grid-cols-2  justify-between  mt-10">
+            <p className="font-extrabold text-2xl text-orange-400"> {users?.displayName} </p>
+            <p className="font-extrabold text-xl">Total User : {users.length}</p>
+           </div>
+           <div className="overflow-x-auto">
+  <table className="table">
+    {/* head */}
+    <thead>
+      <tr>
+        <th>
+         
+        </th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {/* row 1 */}
+{
+    users.map((user , index) =>    <tr key={user._id} className="fromDivNavM">
+        <th>
+          <label>
+             {index + 1}
+          </label>
+        </th>
+        <td>
+          <div className="flex items-center gap-3">
+            <div className="avatar">
+              <div className="mask mask-squircle w-20 h-20 mix-blend-exclusion">
+                <img src={user.photo} alt="Unavialable" />
+              </div>
+            </div>
+            <div>
+              <div className="font-bold text-white">{user.name}</div>
+              <div className="text-sm opacity-50 text-white">{user.location}</div>
+            </div>
+          </div>
+        </td>
+        <td className="text-white font-bold">
+          {user.email}
+          <br/>
+          {/* <span className="badge badge-ghost badge-sm text-white font-extrabold"> Age : {user.age}</span> */}
+        </td>
+        <td></td>
+        <th>
+        <button onClick={() => handleDeleted(user._id)} className="btn text-2xl text-white  fromDivNavM ml-3"><RiDeleteBin4Line /></button>
+        </th>
+      </tr>)
+}
+   
+   
+      
+     
+    </tbody>
+  
+    
+  </table>
+</div>
         </div>
     );
 };

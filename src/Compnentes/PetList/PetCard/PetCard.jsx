@@ -1,5 +1,6 @@
 import { MdOutlineLocationOn } from "react-icons/md";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const PetCard = () => {
  const [petCard , setPetCard] = useState([]);
@@ -19,7 +20,7 @@ const PetCard = () => {
               <p className="text-xl font-bold"> Age: {petCards.age}</p>
               <p className="text-xl  flex  items-center"> <MdOutlineLocationOn /> {petCards.location}</p>
               <div className="card-actions ">
-                <button className="btn fromDivNav w-full rounded-full px-11 font-bold text-white">VIEW DETAILS </button>
+          <button className="btn fromDivNavM w-full rounded-full px-11 font-bold text-white">  <Link to={"/seeAllPet"}>    See All Pet </Link></button>
               </div>
             </div>
           </div>)

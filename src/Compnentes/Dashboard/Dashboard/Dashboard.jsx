@@ -2,7 +2,10 @@
 import { FaAd, FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaPhone, FaSearch, FaShoppingCart, FaUsers, FaUtensils } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import { RxDashboard } from "react-icons/rx";
 import useAuth from "../../Hooks/Auth/useAuth";
+import { IoMdAdd } from "react-icons/io";
+import { MdPets } from "react-icons/md";
 const Dashboard = () => {
     const {user} = useAuth()
     // const [isAdmin] = true;
@@ -12,32 +15,37 @@ const Dashboard = () => {
       {
         user ? <>
           <li>
-            <NavLink className={ " hover:bg-purple-950 " } to="/dashboard/adminHome">
+            <NavLink className={ " hover:bg-purple-950 text-white font-bold " } to="/dashboard/adminHome">
               <FaHome></FaHome>
               Admin Home</NavLink>
           </li>
           <li>
-            <NavLink  className={"hover:bg-purple-950"} to="/dashboard/addItems">
-              <FaUtensils></FaUtensils>
-              Add Items</NavLink>
+            <NavLink  className={"hover:bg-purple-950 text-white font-bold"} to="/dashboard/addPet">
+            <IoMdAdd />
+              Add Pet</NavLink>
           </li>
           <li>
-            <NavLink  className={"hover:bg-purple-950"}  to="/dashboard/manageItems">
-              <FaList></FaList>
-              Manage Items</NavLink>
+            <NavLink  className={"hover:bg-purple-950 text-white font-bold"} to="/dashboard/addDonationPet">
+            <IoMdAdd />
+              Add Donation Pet</NavLink>
           </li>
           <li>
-            <NavLink  className={"hover:bg-purple-950"}  to="/dashboard/contactInfo">
+            <NavLink  className={"hover:bg-purple-950 text-white font-bold"}  to="/dashboard/adoptCart">
+            <MdPets />
+              Adopt Cart</NavLink>
+          </li>
+          <li>
+            <NavLink  className={"hover:bg-purple-950 text-white font-bold"}  to="/dashboard/contactInfo">
              <FaPhone></FaPhone>
             ContactInfo</NavLink>
           </li>
           <li>
-            <NavLink  className={"hover:bg-purple-950"} to="/dashboard/bookings">
+            <NavLink  className={"hover:bg-purple-950 text-white font-bold"} to="/dashboard/bookings">
               <FaBook></FaBook>
-              Manage Bookings</NavLink>
+            Menage Bokings</NavLink>
           </li>
           <li>
-            <NavLink  className={"hover:bg-purple-950"} to="/dashboard/users">
+            <NavLink  className={"hover:bg-purple-950 text-white font-bold"} to="/dashboard/users">
               <FaUsers></FaUsers>
               All Users</NavLink>
           </li>
@@ -45,28 +53,28 @@ const Dashboard = () => {
           :
           <>
             <li>
-              <NavLink  className={"hover:bg-purple-950"}  to="/dashboard/userHome">
+              <NavLink  className={"hover:bg-purple-950 text-white font-bold"}  to="/dashboard/userHome">
                 <FaHome></FaHome>
                 User Home</NavLink>
             </li>
             <li>
-              <NavLink  className={"hover:bg-purple-950"} to="/dashboard/history">
+              <NavLink  className={"hover:bg-purple-950 text-white font-bold"} to="/dashboard/history">
                 <FaCalendar></FaCalendar>
                 Not History</NavLink>
             </li>
             <li>
-              <NavLink  className={"hover:bg-purple-950"}  to="/dashboard/cart">
+              <NavLink  className={"hover:bg-purple-950 text-white font-bold"}  to="/dashboard/cart">
                 
                 <FaShoppingCart></FaShoppingCart>
               </NavLink>
             </li>
             <li>
-              <NavLink  className={"hover:bg-purple-950"} to="/dashboard/review">
+              <NavLink  className={"hover:bg-purple-950 text-white font-bold"} to="/dashboard/review">
                 <FaAd></FaAd>
                 Add a Review</NavLink>
             </li>
             <li>
-              <NavLink  className={"hover:bg-purple-950"} to="/dashboard/paymentHistory">
+              <NavLink  className={"hover:bg-purple-950 text-white font-bold"} to="/dashboard/paymentHistory">
                 <FaList></FaList>
                 Real Payment History</NavLink>
             </li>
@@ -75,17 +83,17 @@ const Dashboard = () => {
       {/* shared nav links */}
       <div className="divider"></div>
       <li>
-        <NavLink  className={"hover:bg-purple-950"} to="/">
+        <NavLink  className={"hover:bg-purple-950 text-white font-bold"} to="/">
           <FaHome></FaHome>
           Home</NavLink>
       </li>
       <li>
-        <NavLink  className={"hover:bg-purple-950"} to="/ourMenu">
+        <NavLink  className={"hover:bg-purple-950 text-white font-bold"} to="/ourMenu">
           <FaSearch></FaSearch>
           Menu</NavLink>
       </li>
       <li>
-        <NavLink   className={"hover:bg-purple-950"} to="/order/contactUs">
+        <NavLink   className={"hover:bg-purple-950 text-white font-bold"} to="/order/contactUs">
           <FaEnvelope></FaEnvelope>
           Contact</NavLink>
       </li>
@@ -94,7 +102,7 @@ const Dashboard = () => {
         <div>
             <div className="drawer lg:drawer-open">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-  <div className="drawer-content flex flex-col items-center justify-center">
+  <div className="drawer-content">
     {/* Page content here */}
    
     <Outlet></Outlet>
@@ -105,7 +113,7 @@ const Dashboard = () => {
     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label> 
     <ul className="menu p-4 w-80 min-h-full fromDivNavM text-base-content">
       {/* Sidebar content here */}
-      <p className="font-extrabold text-2xl text-purple-600"> DASHBOARD</p>
+      <p className="font-extrabold text-2xl text-purple-600 flex items-center gap-4"><RxDashboard /> DASHBOARD</p>
      {navLinks}
     </ul>
   

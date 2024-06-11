@@ -1,9 +1,10 @@
 
 
 const MenageItems = () => {
+    
     return (
         <div>
-            This Is Menage Items
+        
         </div>
     );
 };
