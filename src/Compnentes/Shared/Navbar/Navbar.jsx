@@ -13,6 +13,7 @@ import { SiGooglecampaignmanager360 } from "react-icons/si";
 import useAuth from '../../Hooks/Auth/useAuth';
 import { MdPets } from "react-icons/md";
 import UseAdoptPet from '../../Hooks/UseAdoptPet/UseAdoptPet';
+import { IoSearch } from 'react-icons/io5';
 const Navbar = () => {
 const {user , logout} = useAuth()
 const [adoptPet , refetch] = UseAdoptPet();
@@ -79,7 +80,7 @@ LOGOUT
   </>
     return (
         <div  data-aos="fade-down">
-            <div className="navbar fromDiv  ">
+            <div className="navbar fromDiv    ">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -104,12 +105,13 @@ LOGOUT
    <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
         <div className="indicator">
+      <Link to={"/search"} className='gap-4 mr-4 text-2xl text-white'> <IoSearch /></Link>
         
-    
+      
         <NavLink to={"/dashboard/adoptCart"}
  
  className={({ isActive, isPending }) =>
-   isPending ? "pending" : isActive ? "text-2xl  hover:border-b-4 fromDivNavM  border-yellow-200  font-bold  rounded mt-1" : "text-white  font-bold  text-2xl  " 
+   isPending ? "pending" : isActive ? "text-2xl mr-4 hover:border-b-4 fromDivNavM  border-yellow-200  font-bold  rounded mt-1" : "text-white mr-4 font-bold  text-2xl  " 
  }
 >
 <div>
@@ -117,7 +119,7 @@ LOGOUT
 <MdPets />
 </div>
 </NavLink>
-          <span className="badge badge-sm indicator-item">{adoptPet.length}</span>
+          <span className="badge badge-sm indicator-item mr-5 text-white fromDivNavM">{adoptPet.length}</span>
      
         </div>
       </div>

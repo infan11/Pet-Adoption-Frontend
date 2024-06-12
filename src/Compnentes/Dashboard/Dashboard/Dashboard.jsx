@@ -16,7 +16,7 @@ const Dashboard = () => {
   const navLinks = <>
 
     {
-      isAdmin ? <>
+     isAdmin ? <>
         <li>
           <NavLink className={" hover:bg-purple-950 text-white font-bold "} to="/dashboard/adminHome">
             <FaHome></FaHome>
@@ -35,7 +35,7 @@ const Dashboard = () => {
         <li>
           <NavLink className={"hover:bg-purple-950 text-white font-bold"} to="/dashboard/adoptCart">
             <MdPets />
-            Adopt Cart</NavLink>
+            Adopt Cart<div className="badge badge-accent badge-outline">{adoptCart.length}</div></NavLink>
         </li>
         <li>
           <NavLink className={"hover:bg-purple-950 text-white font-bold"} to="/dashboard/contactInfo">
@@ -92,9 +92,9 @@ const Dashboard = () => {
         Home</NavLink>
     </li>
     <li>
-      <NavLink className={"hover:bg-purple-950 text-white font-bold"} to="/ourMenu">
+      <NavLink className={"hover:bg-purple-950 text-white font-bold"} to="/petList">
         <FaSearch></FaSearch>
-        Menu</NavLink>
+        Pet Listing</NavLink>
     </li>
     <li>
       <NavLink className={"hover:bg-purple-950 text-white font-bold"} to="/order/contactUs">

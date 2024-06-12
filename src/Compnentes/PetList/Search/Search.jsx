@@ -24,7 +24,7 @@ const Search = () => {
     };
 
     return (
-        <div className="max-w-7xl mx-auto px-10 min-h-screen mt-4">
+        <div className="max-w-7xl  mx-auto px-10 min-h-screen mt-4">
             <div className="flex relative">
                 <input 
                     onChange={filter}

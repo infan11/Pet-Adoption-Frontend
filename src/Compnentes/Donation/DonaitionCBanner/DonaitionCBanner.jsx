@@ -17,7 +17,7 @@ const DonaitionCBanner = () => {
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
+        <SwiperSlide className='fixed top-10'>
        <div className=''>
        <div className="hero  lg:h-[600px]" style={{backgroundImage: 'url(https://i.ibb.co/x1P7kyK/imageC.jpg)'}}>
   <div className="hero-overlay bg-opacity-50"></div>

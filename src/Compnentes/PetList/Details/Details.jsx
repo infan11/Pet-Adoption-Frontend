@@ -95,6 +95,7 @@ const handleAdopt = pet => {
               <div className="card-actions ">
             
                 <button onClick={() => handleAdopt(pets)} className="btn fromDivNavM w-full rounded-full px-11 font-bold text-white">Adopt</button>
+                
               </div>
 
             </div>

@@ -1,12 +1,15 @@
 import { Navigate, useLocation } from "react-router-dom";
+import UseAdmin from "../../Hooks/UseAdmin/UseAdmin";
 import useAuth from "../../Hooks/Auth/useAuth";
 import { Puff } from "react-loader-spinner";
 
-const PrivateRoute = ({ children }) => {
+
+const AdminRoutes = ({ children }) => {
     const { user, loading } = useAuth();
+    const [isAdmin, isAdminLoading] = UseAdmin();
     const location = useLocation();
-    if (loading) {
-        return <div  className=' flex justify-center items-center min-h-screen'>
+    if (loading || isAdminLoading) {
+        return <div className="min-h-screen justify-center  items-center ">
             <Puff
                 visible={true}
                 height="100"
@@ -15,15 +18,14 @@ const PrivateRoute = ({ children }) => {
                 ariaLabel="puff-loading"
                 wrapperStyle={{}}
                 wrapperClass=""
-               
             />
         </div>
     }
-    if (!user) {
+    if (!user && isAdmin) {
         return <Navigate to={"/login"} state={{ from: location }} replace ></Navigate>
 
     }
     return children
 };
 
-export default PrivateRoute;
+export default AdminRoutes;

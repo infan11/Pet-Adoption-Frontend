@@ -19,6 +19,7 @@ import Details from "../PetList/Details/Details";
 import AdoptCart from "../AdoptCart/AdoptCart";
 import AddDonationPet from "../Dashboard/AddDonationPet/AddDonationPet";
 import Search from "../PetList/Search/Search";
+import AdminRoutes from "./AdminRoutes/AdminRoutes";
 
 
 export const router = createBrowserRouter([
@@ -69,38 +70,41 @@ export const router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard></Dashboard>,
     children: [
+     // user panel
+      {
+        path: "/dashboard/adoptCart",
+        element: <AdoptCart></AdoptCart>
+      },
+    
+      // admin panel
+      {
+        path: "/dashboard/manageItems",
+        element:<AdminRoutes> <MenageItems></MenageItems></AdminRoutes>
+      },
+      {
+        path: "/dashboard/contactInfo",
+        element:<AdminRoutes> <ContactInfo></ContactInfo></AdminRoutes>
+      },
+      {
+        path: "/dashboard/addDonationPet",
+        element:<AdminRoutes> <AddDonationPet></AddDonationPet></AdminRoutes>
+      },
+      ,
+      {
+        path: "/dashboard/bookings",
+        element: <MenageItems></MenageItems>
+      },
       {
         path: "/dashboard/adminHome",
         element: <AdminHome></AdminHome>
       },
       {
         path: "/dashboard/addPet",
-        element: <AddPet></AddPet>
-      },
-      {
-        path: "/dashboard/addDonationPet",
-        element: <AddDonationPet></AddDonationPet>
-      },
-      {
-        path: "/dashboard/adoptCart",
-        element: <AdoptCart></AdoptCart>
-      }
-      ,
-      {
-        path: "/dashboard/manageItems",
-        element: <MenageItems></MenageItems>
-      },
-      {
-        path: "/dashboard/contactInfo",
-        element: <ContactInfo></ContactInfo>
-      },
-      {
-        path: "/dashboard/bookings",
-        element: <MenageItems></MenageItems>
+        element: <AdminRoutes><AddPet></AddPet></AdminRoutes>
       },
       {
         path: "/dashboard/users",
-        element: <AllUser></AllUser>
+        element:<AdminRoutes> <AllUser></AllUser></AdminRoutes>
       },
     ]
   }
