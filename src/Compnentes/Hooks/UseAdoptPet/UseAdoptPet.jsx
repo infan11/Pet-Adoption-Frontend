@@ -6,9 +6,9 @@ const UseAdoptPet = () => {
     const axiosSecure = UseAxiosSecure();
     const {user} = useAuth();
  const {refetch , data : adoptPet = []} = useQuery({
-    queryKey: ["adoptPet"],
+    queryKey: ["adoptPet" ,user?.email],
     queryFn : async () => {
-        const res = await axiosSecure.get("/adopt")
+        const res = await axiosSecure.get(`/adopt?email=${user.email}`) 
         return res.data
     }
  })

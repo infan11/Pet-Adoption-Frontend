@@ -1,4 +1,5 @@
 import { IoSearch } from "react-icons/io5";
+import { Link } from "react-router-dom";
 const PetBanner = () => {
     return (
         <div data-aos="zoom-in">
@@ -8,7 +9,7 @@ const PetBanner = () => {
 <div data-aos="zoom-out" className="max-w-md  fromDivNavM p-10 rounded-2xl ">
   <h1 className="mb-5 text-3xl text-white font-bold font-mono ">Find The Perfect Pet  For You!</h1>
     <div className="flex">
-    <input type="text" placeholder="Search Your Pet " className="w-full fromDivNavM border-white border-2 p-3 px-14 text-white font-bold rounded-full bg-transparent mb-8 " />
+   <Link to={"/search"}> <input type="text" placeholder="Search Your Pet " className="w-full fromDivNavM border-white border-2 p-3 px-14 text-white font-bold rounded-full bg-transparent mb-8 " /></Link>
    <div className="mt-4 font-bold text-xl border-r-2 absolute ml-4">
  <div className="mr-3">
  <IoSearch />

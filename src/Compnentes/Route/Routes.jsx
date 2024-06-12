@@ -18,38 +18,45 @@ import SeeAllPet from "../PetList/SeeAllPet/SeeAllPet";
 import Details from "../PetList/Details/Details";
 import AdoptCart from "../AdoptCart/AdoptCart";
 import AddDonationPet from "../Dashboard/AddDonationPet/AddDonationPet";
+import Search from "../PetList/Search/Search";
+
+
 export const router = createBrowserRouter([
   {
     path: "/",
-    element:  <Main></Main> ,
+    element: <Main></Main>,
     children: [
       {
-          path: "/",
-          element: <Home></Home>
+        path: "/",
+        element: <Home></Home>
       },
-       {
+      {
         path: "/petList",
         element: <PetList></PetList>,
-        
-       },
-       {
-        path : "/seeAllPet",
-        element: <SeeAllPet></SeeAllPet>
-       },
+
+      }, {
+        path : "/search",
+        element: <Search></Search>
+      }
+      ,
+      {
+        path: "/seeAllPet",
+        element: <SeeAllPet ></SeeAllPet>
+      },
       {
         path: "/donation",
         element: <PrivateRoute><Donation></Donation></PrivateRoute>
       },
       {
-         path: "/details/:id",
-         element: <Details></Details>
+        path: "/details/:id",
+        element: <Details></Details>
       },
       {
-       path: "/login",
-       element: <Login></Login>
+        path: "/login",
+        element: <Login></Login>
       },
       {
-        path: "/register", 
+        path: "/register",
         element: <Register></Register>
       },
       {
@@ -60,40 +67,40 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element : <Dashboard></Dashboard>,
+    element: <Dashboard></Dashboard>,
     children: [
       {
-        path : "/dashboard/adminHome",
-        element : <AdminHome></AdminHome>
+        path: "/dashboard/adminHome",
+        element: <AdminHome></AdminHome>
       },
       {
-        path : "/dashboard/addPet",
-        element : <AddPet></AddPet>
+        path: "/dashboard/addPet",
+        element: <AddPet></AddPet>
       },
       {
-        path : "/dashboard/addDonationPet",
-        element : <AddDonationPet></AddDonationPet>
+        path: "/dashboard/addDonationPet",
+        element: <AddDonationPet></AddDonationPet>
       },
       {
-        path : "/dashboard/adoptCart",
+        path: "/dashboard/adoptCart",
         element: <AdoptCart></AdoptCart>
       }
       ,
       {
-        path : "/dashboard/manageItems",
-        element : <MenageItems></MenageItems>
+        path: "/dashboard/manageItems",
+        element: <MenageItems></MenageItems>
       },
       {
-        path : "/dashboard/contactInfo",
-        element : <ContactInfo></ContactInfo>
+        path: "/dashboard/contactInfo",
+        element: <ContactInfo></ContactInfo>
       },
       {
-        path : "/dashboard/bookings",
-        element : <MenageItems></MenageItems>
+        path: "/dashboard/bookings",
+        element: <MenageItems></MenageItems>
       },
       {
-        path : "/dashboard/users",
-        element : <AllUser></AllUser>
+        path: "/dashboard/users",
+        element: <AllUser></AllUser>
       },
     ]
   }

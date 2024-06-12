@@ -12,14 +12,16 @@ import { CiCircleList } from "react-icons/ci";
 import { SiGooglecampaignmanager360 } from "react-icons/si";
 import useAuth from '../../Hooks/Auth/useAuth';
 import { MdPets } from "react-icons/md";
+import UseAdoptPet from '../../Hooks/UseAdoptPet/UseAdoptPet';
 const Navbar = () => {
 const {user , logout} = useAuth()
-
+const [adoptPet , refetch] = UseAdoptPet();
 const handleLogout = () => {
   logout()
   .then(() => {})
   .catch(error => console.log(error))
 }
+refetch()
   // navlinks
   const navNavLinks =  <>
   
@@ -87,7 +89,7 @@ LOGOUT
         {navNavLinks}
       </ul>
     </div>
-    <Link to={"/"} className=" text-xl"><img className='w-16' src={logo} alt="" /></Link>  
+    <Link to={"/"} className=" text-xl"><img className='w-16 fromDivNav rounded-full' src={logo} alt="" /></Link>  
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 gap-5 text-white font-bold">
@@ -98,16 +100,31 @@ LOGOUT
   <div className="navbar-end">
   {
     user ? <>
-      <NavLink to={"/dashboard/adoptCart"}
+
+   <div className="dropdown dropdown-end">
+      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+        <div className="indicator">
+        
+    
+        <NavLink to={"/dashboard/adoptCart"}
  
  className={({ isActive, isPending }) =>
-   isPending ? "pending" : isActive ? "text-2xl  hover:border-b-4  border-yellow-200  font-bold  rounded mt-1" : "text-white  font-bold  text-2xl  " 
+   isPending ? "pending" : isActive ? "text-2xl  hover:border-b-4 fromDivNavM  border-yellow-200  font-bold  rounded mt-1" : "text-white  font-bold  text-2xl  " 
  }
 >
+<div>
+
 <MdPets />
+</div>
 </NavLink>
-       <div className="dropdown dropdown-end dropdown-hover ml-5" >
-      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+          <span className="badge badge-sm indicator-item">{adoptPet.length}</span>
+     
+        </div>
+      </div>
+     
+    </div>
+       <div className="dropdown dropdown-end dropdown-hover ml-5 " >
+      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar fromDivNavM">
         <div className="w-16 rounded-full">
           <img alt="" src={user?.photoURL} />
         </div>

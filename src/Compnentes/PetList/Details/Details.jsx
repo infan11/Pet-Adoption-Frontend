@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 
 const Details = () => {
 const {id} = useParams();
-const [pet] = UsePet();
+const [pet , refetch] = UsePet();
 const {user} = useAuth();
 const [pets , setPets] = useState(null) 
 const axiosSecure = UseAxiosSecure();
@@ -41,6 +41,7 @@ const handleAdopt = pet => {
           axiosSecure.post("/adopt" , adoptInfo)
           .then(res => {
            if(res.data.insertedId){
+            refetch();
             toast.success(` Successfully Add ${pets.name}`, {
               position: "top-center",
               autoClose: 5000,
@@ -51,7 +52,9 @@ const handleAdopt = pet => {
               progress: undefined,
               theme: "light",
               });
+              
           }
+          
          })
             }
             else{

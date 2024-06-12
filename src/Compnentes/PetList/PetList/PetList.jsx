@@ -12,6 +12,7 @@ const PetList = () => {
         <div>
        <PetBanner></PetBanner>
        <PetBannerTwo></PetBannerTwo>
+       
       <PetCardBanner></PetCardBanner>
       <PetCard></PetCard>
       <PetAds></PetAds>

@@ -1,6 +1,6 @@
 .fromDivNav  {
     box-shadow: -1px 2px 5px 5px rgba(117, 116, 116, 0.117);
-    background-color: rgba(10, 120, 61, 0.595);
+   
     border: 1px solid rgba(2, 82, 255, 0.841);
     transition: box-shadow 0.4s ease-in-out;
     box-shadow: -20px 30px 20px -20px;
@@ -54,20 +54,20 @@
   
   }
 .fromDivNavM  {
-    box-shadow: -1px 2px 5px 5px rgba(208, 210, 211, 0.117);
-    background-color: rgba(14, 2, 29, 0.278);
-    border: 1px solid rgba(2, 82, 255, 0.841);
+    box-shadow: -1px 2px 5px 5px rgba(208, 210, 211, 0.282);
+    background-color: rgba(9, 5, 22, 0.754);
+    border: 1px solid rgba(44, 6, 125, 0.787);
     transition: box-shadow 0.4s ease-in-out;
     
    
   
   }
   .fromDivNavM:hover {
-      box-shadow: inset 0 0 20px rgba(2, 82, 255, 0.894); 
+      box-shadow: inset 0 0 20px rgba(16, 4, 144, 0.841); 
     }
   
   .fromDivNavM:focus {
-      box-shadow: 510px 510px 510px rgba(2, 82, 255, 0.841); 
+      box-shadow: 510px 510px 510px rgba(16, 4, 144, 0.841); 
     }
   .fromDivNavD  {
     box-shadow: -1px 2px 5px 5px rgba(117, 116, 116, 0.117);
