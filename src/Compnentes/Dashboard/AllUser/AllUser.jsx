@@ -13,7 +13,9 @@ const AllUser = () => {
     queryFn : async () => {
         const res = await axiosSecure.get("/users");
         return res.data;
+        
     }
+    
   })
 const handleDeleted = id => {
   Swal.fire({
@@ -82,7 +84,7 @@ const handleAdmin = id => {
     </thead>
     <tbody>
       {/* row 1 */}
-{
+{ users.length > 0 ? (
     users.map((user , index) =>    <tr key={user._id} className="fromDivNavM mb-4">
         <th>
           <label>
@@ -114,7 +116,10 @@ const handleAdmin = id => {
         <th>
         <button onClick={() => handleDeleted(user._id)} className="btn text-2xl text-white  fromDivNavM ml-3"><RiDeleteBin4Line /></button>
         </th>
-      </tr>)
+      </tr>) )
+      : (
+        <p className="text-white font-bold text-center mt-5">No User available for Pet adoption Web Page.</p>
+      )
 }
    
    

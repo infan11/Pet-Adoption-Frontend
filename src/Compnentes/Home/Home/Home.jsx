@@ -7,10 +7,17 @@ import PetAvailable from "./PetAvailable/PetAvailable";
 import AboutUs from "../AboutUs/AboutUs";
 import Team from "./Team/Team";
 import BannerPet from "./BannerPet/BannerPet";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
     return (
+
         <div>
+             <Helmet>
+                
+                <title>Home </title>
+                
+            </Helmet>
           <Slider></Slider>
          <BannerTwo></BannerTwo>
          <Service></Service>

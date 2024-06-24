@@ -10,6 +10,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
+import { Link } from 'react-router-dom'
 const PetAvailable = () => {
     
     return (
@@ -46,7 +47,7 @@ const PetAvailable = () => {
       <div className="badge badge-secondary">NEW</div>
     </h2>
     <p>Cats bring comfort, agility, curiosity, and charm to our lives.</p>
-     <button className='mt-1 p-3 px-10 bg-green-500 rounded-3xl btn text-white font-bold'>MORE INFO</button>
+     <button className='mt-1 p-3 px-10 bg-green-500 rounded-3xl btn text-white font-bold'><Link to={'/seeAllPet'}>MORE</Link></button>
   </div>
 </div></SwiperSlide>
         <SwiperSlide>
@@ -59,7 +60,7 @@ const PetAvailable = () => {
     </h2>
     <p>
 Dogs offer loyalty, companionship, protection, brightening our days.</p>
-     <button className='mt-1 p-3 px-10 bg-green-500 rounded-3xl btn text-white font-bold'>MORE INFO</button>
+     <button className='mt-1 p-3 px-10 bg-green-500 rounded-3xl btn text-white font-bold'><Link to={'/seeAllPet'}>MORE</Link></button>
   </div>
 </div>
         </SwiperSlide>
@@ -72,7 +73,7 @@ Dogs offer loyalty, companionship, protection, brightening our days.</p>
       <div className="badge badge-secondary">NEW</div>
     </h2>
     <p>Rabbits are gentle, quiet, fluffy pets with playful and affectionate .</p>
-     <button className='mt-1 p-3 px-10 bg-green-500 rounded-3xl btn text-white font-bold'>MORE INFO</button>
+     <button className='mt-1 p-3 px-10 bg-green-500 rounded-3xl btn text-white font-bold'><Link to={'/seeAllPet'}>MORE</Link></button>
   </div>
 </div>
         </SwiperSlide>
@@ -85,7 +86,7 @@ Dogs offer loyalty, companionship, protection, brightening our days.</p>
       <div className="badge badge-secondary">NEW</div>
     </h2>
     <p>Birds bring vibrant colors, joyful songs, and a sense of freedom</p>
-     <button className='mt-1 p-3 px-10 bg-green-500 rounded-3xl btn text-white font-bold'>MORE INFO</button>
+     <button className='mt-1 p-3 px-10 bg-green-500 rounded-3xl btn text-white font-bold'><Link to={'/seeAllPet'}>MORE</Link></button>
   </div>
 </div>
         </SwiperSlide>
@@ -98,7 +99,7 @@ Dogs offer loyalty, companionship, protection, brightening our days.</p>
       <div className="badge badge-secondary">NEW</div>
     </h2>
     <p>Fish offer tranquil beauty, creating a serene and calming environment.</p>
-     <button className='mt-1 p-3 px-10 bg-green-500 rounded-3xl btn text-white font-bold'>MORE INFO</button>
+     <button className='mt-1 p-3 px-10 bg-green-500 rounded-3xl btn text-white font-bold'><Link to={'/seeAllPet'}>MORE</Link></button>
   </div>
 </div>
         </SwiperSlide>

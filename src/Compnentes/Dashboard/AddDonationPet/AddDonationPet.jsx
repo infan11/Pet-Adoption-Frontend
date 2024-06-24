@@ -64,12 +64,12 @@ const AddDonationPet = () => {
             </div>
             <select name="donationAmount" className="select select-bordered text-white font-bold fromDivNavM " required>
               <option disabled selected>Select one</option>
-              <option>$20</option>
-              <option>$40</option>
-              <option>$100</option>
-              <option>$200</option>
-              <option>$500</option>
-              <option>$600</option>
+              <option>20</option>
+              <option>40</option>
+              <option>100</option>
+              <option>200</option>
+              <option>500</option>
+              <option>600</option>
             </select>
 
           </label>

@@ -9,7 +9,7 @@ const AdminRoutes = ({ children }) => {
     const [isAdmin, isAdminLoading] = UseAdmin();
     const location = useLocation();
     if (loading || isAdminLoading) {
-        return <div className="min-h-screen justify-center  items-center ">
+        return <div className=" flex min-h-screen justify-center  items-center ">
             <Puff
                 visible={true}
                 height="100"

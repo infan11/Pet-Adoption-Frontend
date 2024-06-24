@@ -14,9 +14,11 @@ import useAuth from '../../Hooks/Auth/useAuth';
 import { MdPets } from "react-icons/md";
 import UseAdoptPet from '../../Hooks/UseAdoptPet/UseAdoptPet';
 import { IoSearch } from 'react-icons/io5';
+import { BiSolidDonateHeart } from "react-icons/bi";
 const Navbar = () => {
 const {user , logout} = useAuth()
 const [adoptPet , refetch] = UseAdoptPet();
+
 const handleLogout = () => {
   logout()
   .then(() => {})
@@ -80,7 +82,7 @@ LOGOUT
   </>
     return (
         <div  data-aos="fade-down">
-            <div className="navbar fromDiv    ">
+            <div className="navbar fromDivNavM   ">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -107,7 +109,18 @@ LOGOUT
         <div className="indicator">
       <Link to={"/search"} className='gap-4 mr-4 text-2xl text-white'> <IoSearch /></Link>
         
-      
+      <NavLink to={"/dashboard/donateCart"}
+ 
+ className={({ isActive, isPending }) =>
+   isPending ? "pending" : isActive ? "text-2xl mr-4 hover:border-b-4 fromDivNavM  border-yellow-200  font-bold  rounded mt-1" : "text-white mr-4 font-bold  text-2xl  " 
+ }
+>
+<div>
+
+<BiSolidDonateHeart />
+</div>
+</NavLink>
+<span className="badge badge-sm indicator-item mr-5 text-white fromDivNavM">{adoptPet.length}</span>
         <NavLink to={"/dashboard/adoptCart"}
  
  className={({ isActive, isPending }) =>
@@ -125,13 +138,13 @@ LOGOUT
       </div>
      
     </div>
-       <div className="dropdown dropdown-end dropdown-hover ml-5 " >
+       <div className="dropdown dropdown-end dropdown-hover  ml-5  " >
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar fromDivNavM">
         <div className="w-16 rounded-full">
           <img alt="" src={user?.photoURL} />
         </div>
       </div>
-      <ul tabIndex={0} className="menu menu-sm   dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-80 ">
+      <ul tabIndex={0} className="menu menu-sm  fromDivNavM dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-80 ">
       <div className="w-24 mx-auto rounded-full ">
           <img alt=""  className='rounded-full ' src={user?.photoURL} />
         </div>
@@ -141,10 +154,10 @@ LOGOUT
          <p className='ml-5 mt-6 text-white font-bold flex items-center gap-2 '><MdOutlineDriveFileRenameOutline />{user?.displayName}</p>
         <p className='ml-5 mt-2 text-white font-bold flex items-center gap-2 '><HiOutlineMailOpen />{user?.email}</p>
         <p className='ml-5 mt-2 text-white font-bold flex items-center gap-2 ' ><TbArrowGuide />{user?.uid}</p>
-        <li className='ml-2 flex text-white font-bold'><NavLink to={"/dashboard"}> <LuLayoutDashboard /> Dashboard</NavLink></li>
+        <li className='ml-2 flex text-white font-bold '><NavLink to={"/dashboard"}> <LuLayoutDashboard /> Dashboard</NavLink></li>
         </> : <></>
        }
-        <li className='ml-2 text-white font-bold'><NavLink><MdOutlineSettings />Settings</NavLink></li>
+        <li className='ml-2 text-white font-bold '><NavLink><MdOutlineSettings />Settings</NavLink></li>
 
         {
   user ? <>

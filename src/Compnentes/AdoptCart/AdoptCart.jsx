@@ -57,7 +57,7 @@ const AdoptCart = () => {
     </thead>
     <tbody>
       {/* row 1 */}
-{
+{ adoptPet.length > 0 ? (
     adoptPet.map((adoptPets , index) =>    <tr key={adoptPets._id} className="fromDivNavM">
         <th>
           <label>
@@ -86,7 +86,9 @@ const AdoptCart = () => {
         <th>
         <button onClick={() => handleDeleted(adoptPets._id)} className="btn text-2xl text-white  fromDivNavM ml-3"><RiDeleteBin4Line /></button>
         </th>
-      </tr>)
+      </tr>) )  : (
+        <p className="text-white font-bold text-center mt-5">Empty Your Adopt Cart</p>
+      )
 }
    
    

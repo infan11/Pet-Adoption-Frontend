@@ -3,7 +3,7 @@ import icon from '../../../../../assets/image/image/pet.jpg'
 import image from '../../../../../assets/image/image/Cat.jpg'
 const OurService = () => {
     return (
-        <div className="">
+        <div className="text-white">
       <div className="">
       <SectionTitle heading={"--WHAT WE OFFER-- "} subHeading={"OUR SERVICE"} imageHeading={icon} ></SectionTitle>
       </div>

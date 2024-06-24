@@ -1,6 +1,7 @@
 
 
 
+import { Helmet } from "react-helmet";
 import UsePet from "../../Hooks/UsePet/UsePet";
 import PetCardTwo from "../PetList/PetCardTwo/PetCardTwo";
 const SeeAllPet = () => {
@@ -16,7 +17,11 @@ const Other =   pet.filter(pets => pets.category ===  "Other");
 
     return (
         <div>
-
+<Helmet>
+                
+                <title>PetList  | See All Pet </title>
+                
+            </Helmet>
 <div role="tablist" className="tabs tabs-bordered max-w-7xl  mx-auto">
   <input type="radio" name="my_tabs_1" role="tab" className="tab text-white font-bold " aria-label="DOG" />
   <div role="tabpanel" className="tab-content px-6"><PetCardTwo pets={Dog}></PetCardTwo></div>

@@ -20,6 +20,10 @@ import AdoptCart from "../AdoptCart/AdoptCart";
 import AddDonationPet from "../Dashboard/AddDonationPet/AddDonationPet";
 import Search from "../PetList/Search/Search";
 import AdminRoutes from "./AdminRoutes/AdminRoutes";
+import DonationCard from "../Donation/DonationCard/DonationCard";
+import DonateCart from "../Dashboard/DonateCart/DonateCart";
+import Payment from "../Dashboard/Payment/Payment";
+import PaymentHistory from "../Dashboard/PaymentHistory/PaymentHistory";
 
 
 export const router = createBrowserRouter([
@@ -74,6 +78,18 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/adoptCart",
         element: <AdoptCart></AdoptCart>
+      },
+      {
+        path: "/dashboard/donateCart",
+        element: <DonateCart></DonateCart>
+      },
+      {
+        path: "/dashboard/payment",
+        element: <Payment></Payment>
+      },
+      {
+        path: "/dashboard/history",
+        element: <PaymentHistory></PaymentHistory>
       },
     
       // admin panel

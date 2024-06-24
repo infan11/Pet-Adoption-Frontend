@@ -46,13 +46,13 @@ const {user} = useAuth();
         <div>
        <div>
         <p className="text-center mt-3 text-4xl font-extrabold text-white flex ml-6">  Add Pets <IoMdAdd /></p>
-       <form onSubmit={handleAddThePet} className="card-body">
+       <form onSubmit={handleAddThePet} className="card-body ">
        <label className="form-control w-full ">
   <div className="label">
     <span className="label-text text-white">Select Your Pet Image</span>
    
   </div>
-  <input type="file" name="photo" accept="image/*" className="file-input file-input-bordered w-full text-white font-bold " />
+  <input type="file" name="photo" accept="image/*" className=" fromDivNavM file-input file-input-bordered  fromDivNavM w-full text-white font-bold " />
   <div className="label">
   
   </div>
@@ -61,7 +61,7 @@ const {user} = useAuth();
           <label className="label">
             <span className="label-text text-white">Pet Name</span>
           </label>
-          <input type="text" placeholder="Enter Your Pet Name" name="name" className="input input-bordered text-white font-bold " required />
+          <input type="text" placeholder="Enter Your Pet Name" name="name" className="input input-bordered  fromDivNavM text-white font-bold " required />
         </div>
 
         <label className="form-control w-full ">
@@ -69,7 +69,7 @@ const {user} = useAuth();
     <span className="label-text text-white">Select Your Pet Age</span>
    
   </div>
-  <select name="age" className="select select-bordered text-white font-bold " required>
+  <select name="age" className="select select-bordered  fromDivNavM text-white font-bold " required>
     
     <option disabled selected>Select Pet Age</option>
     <option>1</option>
@@ -100,7 +100,7 @@ const {user} = useAuth();
     <span  className="label-text text-white">Select Pet Category</span>
   
   </div>
-  <select name="category" className="select select-bordered text-white font-bold " required>
+  <select name="category" className="select select-bordered  fromDivNavM text-white font-bold " required>
     <option disabled selected>Select one</option>
     <option>Dog</option>
     <option>Rabbit</option>
@@ -116,7 +116,7 @@ const {user} = useAuth();
     <span  className="label-text text-white">Select Pet location</span>
   
   </div>
-  <select name="location" className="select select-bordered text-white font-bold " required>
+  <select name="location" className="select select-bordered  fromDivNavM text-white font-bold " required>
     <option disabled selected>Pick one</option>
     <option>Gulsan, Dhaka, Bangladesh</option>
 <option>New York, USA</option>
@@ -236,14 +236,14 @@ const {user} = useAuth();
           <label className="label">
             <span className="label-text text-white">Short Description</span>
           </label>
-          <input type="text" placeholder="Type Pet Short Description" name="short_Description" className="input input-bordered text-white font-bold " required />
+          <input type="text" placeholder="Type Pet Short Description" name="short_Description" className="input input-bordered  fromDivNavM text-white font-bold " required />
         </div>
         <label className="form-control">
   <div className="label">
     <span className="label-text text-white">Your Comment</span>
 
   </div>
-  <textarea className="textarea textarea-bordered h-24 text-white" placeholder="Your Comment" required name="text_area"></textarea>
+  <textarea className="textarea textarea-bordered h-24  fromDivNavM text-white" placeholder="Your Comment" required name="text_area"></textarea>
   <div className="label">
     
   </div>

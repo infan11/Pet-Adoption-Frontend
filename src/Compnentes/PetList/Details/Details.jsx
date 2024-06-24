@@ -6,22 +6,54 @@ import { GoLocation } from "react-icons/go";
 import useAuth from "../../Hooks/Auth/useAuth";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
-
-
+import { FaEdit } from "react-icons/fa";
+import { MdOutlineDeleteOutline } from "react-icons/md";
+import { GrCheckboxSelected } from "react-icons/gr";
+import UseAdmin from "../../Hooks/UseAdmin/UseAdmin";
+import AxiosPublic from "../../Hooks/AxiosPublic/AxiosPublic";
 const Details = () => {
 const {id} = useParams();
 const [pet , refetch] = UsePet();
 const {user} = useAuth();
+const [isAdmin] = UseAdmin();
 const [pets , setPets] = useState(null) 
 const axiosSecure = UseAxiosSecure();
 const navigate = useNavigate();
 const location = useLocation();
+const axiosPublic = AxiosPublic();
 useEffect(() => {
     
     fetch(`http://localhost:5000/addPet/${id}`)
     .then(res => res.json())
     .then(data => setPets(data))
-}, [])
+}, []);
+const handleDeleted = id => {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      axiosPublic.delete(`/addPet/${id}`)
+      .then(res => {
+        if(res.data.deletedCount > 0){
+          refetch();
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success"
+          });
+      
+        }
+      })
+     
+    }
+  });
+ }
 const handleAdopt = pet => {
     const { _id, name, age, category, location, short_Description, text_area, photo } = pet ;
     console.log(pet);
@@ -76,7 +108,7 @@ const handleAdopt = pet => {
             }
 
         }
-
+ 
     return (
         <div className=" min-h-screen  justify-center items-center px-7 mt-5 ">
       <div className="grid md:grid-cols-3  gap-5 border-4   ">
@@ -94,7 +126,13 @@ const handleAdopt = pet => {
               
               <div className="card-actions ">
             
-                <button onClick={() => handleAdopt(pets)} className="btn fromDivNavM w-full rounded-full px-11 font-bold text-white">Adopt</button>
+              { isAdmin ? <>
+                <button  className="btn fromDivNavM w-full rounded-full px-11 font-bold text-white"><FaEdit /> Edit</button>
+                <button onClick={() => handleDeleted(pets._id)} className="btn fromDivNavM w-full rounded-full px-11 font-bold text-white"><MdOutlineDeleteOutline />Deleted</button>
+              </> : <>
+              
+              </>}
+                <button onClick={() => handleAdopt(pets)} className="btn fromDivNavM w-full rounded-full px-11 font-bold text-white"><GrCheckboxSelected />Adopt</button>
                 
               </div>
 

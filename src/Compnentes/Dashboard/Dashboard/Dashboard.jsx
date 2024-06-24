@@ -8,15 +8,18 @@ import { IoMdAdd } from "react-icons/io";
 import { MdPets } from "react-icons/md";
 import UseAdmin from "../../Hooks/UseAdmin/UseAdmin";
 import UseAdoptPet from "../../Hooks/UseAdoptPet/UseAdoptPet";
+import UseDonateCartHook from "../../Hooks/UseDonateCartHook/UseDonateCartHook";
+import { BiSolidDonateHeart } from "react-icons/bi";
 const Dashboard = () => {
   const { user } = useAuth()
   const [isAdmin] = UseAdmin();
   const [adoptCart] = UseAdoptPet();
- console.log(isAdmin);
+  const [donateCart] =  UseDonateCartHook()
+  console.log(isAdmin);
   const navLinks = <>
 
     {
-     isAdmin ? <>
+      isAdmin ? <>
         <li>
           <NavLink className={" hover:bg-purple-950 text-white font-bold "} to="/dashboard/adminHome">
             <FaHome></FaHome>
@@ -38,6 +41,13 @@ const Dashboard = () => {
             Adopt Cart<div className="badge badge-accent badge-outline">{adoptCart.length}</div></NavLink>
         </li>
         <li>
+            <NavLink className={"hover:bg-purple-950 text-white font-bold"} to="/dashboard/DonateCart">
+
+            <BiSolidDonateHeart />
+              Donate Cart <div className="badge badge-accent badge-outline">{donateCart.length}</div></NavLink>
+
+          </li>
+        <li>
           <NavLink className={"hover:bg-purple-950 text-white font-bold"} to="/dashboard/contactInfo">
             <FaPhone></FaPhone>
             ContactInfo</NavLink>
@@ -50,8 +60,13 @@ const Dashboard = () => {
         <li>
           <NavLink className={"hover:bg-purple-950 text-white font-bold"} to="/dashboard/users">
             <FaUsers></FaUsers>
-            All Users</NavLink>
+            All Users<div className="badge badge-accent badge-outline">{user.length}</div></NavLink>
         </li>
+        <li>
+            <NavLink className={"hover:bg-purple-950 text-white font-bold"} to="/dashboard/history">
+              <FaCalendar></FaCalendar>
+              History</NavLink>
+          </li>
       </>
         :
         <>
@@ -63,25 +78,28 @@ const Dashboard = () => {
           <li>
             <NavLink className={"hover:bg-purple-950 text-white font-bold"} to="/dashboard/history">
               <FaCalendar></FaCalendar>
-               History</NavLink>
+              History</NavLink>
           </li>
           <li>
             <NavLink className={"hover:bg-purple-950 text-white font-bold"} to="/dashboard/adoptCart">
 
-            <MdPets />
-            Adopt Cart <div className="badge badge-accent badge-outline">{adoptCart.length}</div></NavLink>
-          
+              <MdPets />
+              Adopt Cart <div className="badge badge-accent badge-outline">{adoptCart.length}</div></NavLink>
+
+          </li>
+          <li>
+            <NavLink className={"hover:bg-purple-950 text-white font-bold"} to="/dashboard/DonateCart">
+
+            <BiSolidDonateHeart />
+              Donate Cart <div className="badge badge-accent badge-outline">{adoptCart.length}</div></NavLink>
+
           </li>
           <li>
             <NavLink className={"hover:bg-purple-950 text-white font-bold"} to="/dashboard/review">
               <FaAd></FaAd>
               Add a Review</NavLink>
           </li>
-          <li>
-            <NavLink className={"hover:bg-purple-950 text-white font-bold"} to="/dashboard/paymentHistory">
-              <FaList></FaList>
-              Payment History</NavLink>
-          </li>
+      
         </>
     }
     {/* shared nav links */}

@@ -2,8 +2,12 @@ import iconA from '../../../../assets/image/image/professionel.png'
 import iconB from '../../../../assets/image/image/adoptPets.png'
 import iconC from '../../../../assets/image/image/award.png'
 import iconD from '../../../../assets/image/image/client.png'
+import UseAdoptPet from '../../../Hooks/UseDonateCartHook/UseDonateCartHook';
+
 
 const BannerPet = () => {
+  const [adoptPet] = UseAdoptPet();
+
     return (
         <div>
             <div className="hero mt-8 lg:h-[600px]" style={{backgroundImage: 'url(https://i.ibb.co/2s91DF9/banner-field.jpg)'}}>
@@ -17,7 +21,7 @@ const BannerPet = () => {
       </div>
       <div>
         <img className='w-32 hover:animate-spin mx-auto border-2 bg-white rounded-full' src={iconB} alt="" />
-        <p className='text-center font-bold text-2xl text-white hover:text-green-300'>100</p>
+        <p className='text-center font-bold text-2xl text-white hover:text-green-300'>{adoptPet.length}</p>
         <p className='text-center font-extrabold text-3xl text-white hover:text-green-300'>Adopet Pets</p>
       </div>
       <div>
