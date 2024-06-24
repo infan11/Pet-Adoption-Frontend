@@ -21,7 +21,7 @@ const AddDonationPet = () => {
       donated: donated,
       photo: imageData?.data?.display_url
     }
-    axios.post("http://localhost:5000/donationPet", donationInfo)
+    axios.post("https://pet-adoption-backend-zeta.vercel.app/donationPet", donationInfo)
       .then(res => {
         console.log(res.data);
         if (res.data.insertedId) {
