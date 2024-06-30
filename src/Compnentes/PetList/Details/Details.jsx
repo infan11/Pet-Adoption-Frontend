@@ -23,7 +23,7 @@ const location = useLocation();
 const axiosPublic = AxiosPublic();
 useEffect(() => {
     
-    fetch(`https://pet-adoption-backend-zeta.vercel.app/addPet/${id}`)
+    fetch(`https://pet-adoption-backend-infan11-infan11s-projects.vercel.apphttps://pet-adoption-backend-infan11-infan11s-projects.vercel.app/addPet/${id}`)
     .then(res => res.json())
     .then(data => setPets(data))
 }, []);

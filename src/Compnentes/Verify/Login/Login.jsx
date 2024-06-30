@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import useAuth from "../../Hooks/Auth/useAuth";
 
 import { Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 const Login = () => {
   const {loginUser,googleUser,githubUser} = useAuth();
   const navigate = useNavigate();
@@ -85,6 +86,11 @@ const handleGithub = () => {
 }
     return (
         <div>
+          <Helmet>
+                
+                <title>SignIn - Pet Adopt Web </title>
+                
+            </Helmet>
             <div className="hero min-h-screen  " style={{backgroundImage: 'url(https://i.ibb.co/Gv13swb/gallery2-Cn1-Pb-Ehk.jpg)'}}>
   <div className="hero-overlay bg-opacity-80"></div>
   <div className="hero-content text-center text-neutral-content">

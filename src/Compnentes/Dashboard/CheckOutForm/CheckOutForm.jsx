@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import UseDonateCartHook from "../../Hooks/UseDonateCartHook/UseDonateCartHook";
 import UseAxiosSecure from "../../Hooks/AxiosSecure/UseAxiosSecure";
 import useAuth from "../../Hooks/Auth/useAuth";
+import { Helmet } from "react-helmet";
 
 const CheckOutForm = () => {
     const stripe = useStripe();
@@ -91,6 +92,11 @@ const CheckOutForm = () => {
     };
     return (
         <div>
+           <Helmet>
+                
+                <title>Dashboard | Payment </title>
+                
+            </Helmet>
        <form onSubmit={handleSubmit}>
       <CardElement
         options={{
@@ -108,7 +114,7 @@ const CheckOutForm = () => {
           },
         }}
       />
-      <button className="btn w-full text-white mt-4font-extrabold fromDivNavM" type="submit" disabled={!stripe || !clientSecret}>
+      <button className="btn w-full text-white mt-4font-extrabold fromDivNavM" type="submit" disabled={!stripe }>
         Pay
       </button>
     </form>

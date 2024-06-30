@@ -3,6 +3,7 @@ import UseDonateCartHook from "../../Hooks/UseDonateCartHook/UseDonateCartHook";
 import { RiDeleteBin4Line } from "react-icons/ri"
 import Swal from "sweetalert2";
 import UseAxiosSecure from "../../Hooks/AxiosSecure/UseAxiosSecure";
+import { Helmet } from "react-helmet";
 const DonateCart = () => {
   const [donateCart, refetch] = UseDonateCartHook();
   const totalDonate = donateCart.reduce((total, cart) => total + parseFloat(cart.donationAmount), 0);
@@ -40,7 +41,13 @@ const handleSubmit = event => {
 }
 
   return (
-    <div className="min-h-screen mx-auto fromDivNavM">
+  <div>
+     <Helmet>
+                
+                <title>Dashboard | Donate Cart </title>
+                
+            </Helmet>
+      <div className="min-h-screen mx-auto fromDivNavM">
       <div>
         <h2 className="text-center font-extrabold text-4xl mb-6 mt-4">Donate {donateCart.length} </h2>
         <h2 className="text-center font-extrabold text-4xl mb-6 mt-4">Your Donations {totalDonate} </h2>
@@ -120,6 +127,7 @@ const handleSubmit = event => {
    </form>
 
     </div>
+  </div>
   );
 };
 

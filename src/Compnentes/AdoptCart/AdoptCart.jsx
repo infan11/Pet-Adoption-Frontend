@@ -4,6 +4,7 @@ import { RiDeleteBin4Line } from "react-icons/ri"
 import UseAxiosSecure from "../Hooks/AxiosSecure/UseAxiosSecure";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const AdoptCart = () => {
     const axiosSecure = UseAxiosSecure();
@@ -37,7 +38,13 @@ const AdoptCart = () => {
     }
 
     return (
-        <div className="min-h-screen mx-auto fromDivNavM">
+       <div>
+         <Helmet>
+                
+                <title>Dashboard | Adopt Cart </title>
+                
+            </Helmet>
+         <div className="min-h-screen mx-auto fromDivNavM">
     <div>
       <h2 className="text-center font-extrabold text-4xl mb-6 mt-4">Adopt Pet {adoptPet.length}</h2>
     </div>
@@ -101,6 +108,7 @@ const AdoptCart = () => {
 </div>
        
         </div>
+       </div>
     );
 };
 

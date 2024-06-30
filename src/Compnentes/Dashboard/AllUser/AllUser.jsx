@@ -5,6 +5,7 @@ import { GrUserAdmin } from "react-icons/gr";
 import { RiAdminLine, RiDeleteBin4Line } from "react-icons/ri"
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 const AllUser = () => {
     const {user} = useAuth();
   const axiosSecure = UseAxiosSecure();
@@ -64,6 +65,11 @@ const handleAdmin = id => {
 }
     return (
         <div className="">
+           <Helmet>
+                
+                <title>Dashboard | All User </title>
+                
+            </Helmet>
            <div className=" max-w-7xl px-32  mx-auto  grid md:grid-cols-2  justify-between  mt-10">
             <p className="font-extrabold text-2xl text-orange-400"> {users?.displayName} </p>
             <p className="font-extrabold text-xl">Total User : {users.length}</p>

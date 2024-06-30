@@ -10,6 +10,7 @@ import UseAdmin from "../../Hooks/UseAdmin/UseAdmin";
 import UseAdoptPet from "../../Hooks/UseAdoptPet/UseAdoptPet";
 import UseDonateCartHook from "../../Hooks/UseDonateCartHook/UseDonateCartHook";
 import { BiSolidDonateHeart } from "react-icons/bi";
+import { Helmet } from "react-helmet";
 const Dashboard = () => {
   const { user } = useAuth()
   const [isAdmin] = UseAdmin();
@@ -122,6 +123,11 @@ const Dashboard = () => {
   </>
   return (
     <div>
+       <Helmet>
+                
+                <title>Dashboard  </title>
+                
+            </Helmet>
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">

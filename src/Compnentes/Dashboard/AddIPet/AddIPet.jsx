@@ -3,6 +3,7 @@ import { ImageHook } from "../../Hooks/ImageHook/ImageHook";
 import toast from "react-hot-toast";
 import AxiosPublic from "../../Hooks/AxiosPublic/AxiosPublic";
 import useAuth from "../../Hooks/Auth/useAuth";
+import { Helmet } from "react-helmet";
 
 
 const AddPet = () => {
@@ -44,6 +45,11 @@ const {user} = useAuth();
 
     return (
         <div>
+          <Helmet>
+                
+                <title>Dashboard | Add Pet </title>
+                
+            </Helmet>
        <div>
         <p className="text-center mt-3 text-4xl font-extrabold text-white flex ml-6">  Add Pets <IoMdAdd /></p>
        <form onSubmit={handleAddThePet} className="card-body ">
